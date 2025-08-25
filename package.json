@@ -1,0 +1,24 @@
+{
+  "name": "task-5",
+  "version": "1.0.0",
+  "description": "Tesla News is a simple web application that fetches and displays the latest news articles related to Tesla. The application uses the News API to retrieve articles and presents them in a user-friendly format.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishaq08/News-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishaq08/News-app/issues"
+  },
+  "homepage": "https://github.com/Ishaq08/News-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

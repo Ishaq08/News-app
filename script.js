@@ -1,5 +1,10 @@
-const API_URL =
+// Original NewsAPI endpoint
+const NEWS_API_URL =
   'https://newsapi.org/v2/everything?q=tesla&from=2025-07-25&sortBy=publishedAt&apiKey=be36b26aae6c415b8c7abd40660689fa';
+
+// Wrap NewsAPI with AllOrigins proxy
+const API_URL =
+  'https://api.allorigins.win/get?url=' + encodeURIComponent(NEWS_API_URL);
 
 async function fetchNews() {
   try {
@@ -8,8 +13,11 @@ async function fetchNews() {
       throw new Error(`API Error: ${response.status}`);
     }
 
+    // AllOrigins returns { contents: "..." }
     const data = await response.json();
-    displayNews(data.articles || []);
+    const parsed = JSON.parse(data.contents);
+
+    displayNews(parsed.articles || []);
   } catch (error) {
     console.error('Error fetching news:', error);
     document.getElementById('news-container').innerHTML =
